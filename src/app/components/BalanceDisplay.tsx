@@ -40,7 +40,7 @@ const BalanceDisplay: React.FC<BalanceDisplayProps> = ({
     );
   }
   return (
-    <TransitionFrame customClass={{ customMargin: "mt-24", delay: "3" }}>
+    <TransitionFrame customClass={{ customMargin: "mt-24", delay: "5" }}>
       <div className="flex flex-col items-center justify-center gap-5">
         <div className="stats shadow flex flex-col md:flex-row lg:flex-row xl:flex-row">
           {[
