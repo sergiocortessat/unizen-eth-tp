@@ -1,22 +1,18 @@
 "use client";
 
 import React from "react";
-import BalanceDisplay from "../components/BalanceDisplay";
-import InputForm from "../components/UI/InputForm";
-import GetBalanceHook from "../Hooks/GetBalanceHooks";
+import BalanceDisplay from "../../components/BalanceDisplay";
+import InputForm from "../../components/InputForm";
+import {useGetBalance} from '../../hooks/useGetBalance'
 
 const BalancePage = () => {
   const {
-    address,
-    stakingBalance,
-    nativeBalance,
-    tokenBalance,
+    balance,
     loading,
-    handleSubmit,
-    handleInputChange,
+    fetchBalances,
     validAddress,
     error,
-  } = GetBalanceHook();
+  } = useGetBalance();
 
   return (
     <div className="container">
@@ -24,15 +20,13 @@ const BalancePage = () => {
         Rocket Pool Balance Checker
       </h1>
       <InputForm
-        handleSubmit={handleSubmit}
-        handleInputChange={handleInputChange}
-        address={address}
+        handleSubmit={fetchBalances}
         error={error}
       />
       <BalanceDisplay
-        stakingBalance={stakingBalance}
-        nativeBalance={nativeBalance}
-        tokenBalance={tokenBalance}
+        stakingBalance={balance.stakingBalance}
+        nativeBalance={balance.nativeBalance}
+        tokenBalance={balance.tokenBalance}
         loading={loading}
         validAddress={validAddress}
       />

@@ -1,15 +1,19 @@
+import React, { useState } from "react";
+
 type InputFormProps = {
-  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  address: string;
+  handleSubmit: (address: string) => void;
   error: string;
 };
-
-const InputForm: React.FC<InputFormProps> = ({ handleSubmit, handleInputChange, address, error }) => {
+// react hook form.
+const InputForm = ({ handleSubmit, error }: InputFormProps) => {
+  const [address, setAddress] = useState("")
   return (
     <div className="my-10">
       <form
-        onSubmit={handleSubmit}
+        onSubmit={(e) => {
+          e.preventDefault()
+          handleSubmit(address)
+        }}
         className="w-full max-w-md mb-5 relative mx-auto"
       >
         <input
@@ -17,7 +21,9 @@ const InputForm: React.FC<InputFormProps> = ({ handleSubmit, handleInputChange, 
           className="w-full border rounded-md px-3 py-2 pr-10 text-white bg-transparent focus:outline-none"
           placeholder="Enter account address"
           value={address}
-          onChange={handleInputChange}
+          onChange={(e) => {
+            setAddress(e.target.value)
+          }}
         />
         <button 
           type="submit" 

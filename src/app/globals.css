@@ -33,6 +33,10 @@ body {
   .animation-delay-400 {
     animation-delay: 0.4s;
   }
+  .unverified-alert-2{
+    @apply opacity-0;
+    animation: slideDown 2s forwards;
+  }
   .unverified-alert-3 {
     @apply opacity-0;
     animation: slideDown 3s forwards;

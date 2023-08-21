@@ -1,8 +1,8 @@
 import React from "react";
-import Loader from "../loading";
+import Loader from "../app/loading";
 import Link from "next/link";
-import { getCurrentDateFormatted } from "../../utils/utilsTools";
-import TransitionFrame from "../components/UI/TransitionFrame";
+import { getCurrentDateFormatted } from "../utils";
+import TransitionFrame from "./TransitionFrame";
 
 type BalanceDisplayProps = {
   stakingBalance: number;
@@ -15,13 +15,13 @@ type BalanceDisplayProps = {
   validAddress: { verifiedAddress: string; urlAddress: string };
 };
 
-const BalanceDisplay: React.FC<BalanceDisplayProps> = ({
+const BalanceDisplay = ({
   stakingBalance,
   nativeBalance,
   tokenBalance,
   loading,
   validAddress,
-}) => {
+}: BalanceDisplayProps) => {
   const { balance, symbol } = tokenBalance;
   const { verifiedAddress, urlAddress } = validAddress;
 
@@ -31,7 +31,7 @@ const BalanceDisplay: React.FC<BalanceDisplayProps> = ({
 
   if (!verifiedAddress) {
     return (
-      <TransitionFrame customClass={{ customMargin: "mt-24", delay: "5" }}>
+      <TransitionFrame className="mt-24">
         <h2 className="text-4xl font-bold text-center text-blackTitle">
           <p className="mb-2">To start checking your balances,</p>
           <p>please enter your wallet address!</p>
@@ -40,7 +40,7 @@ const BalanceDisplay: React.FC<BalanceDisplayProps> = ({
     );
   }
   return (
-    <TransitionFrame customClass={{ customMargin: "mt-24", delay: "5" }}>
+    <TransitionFrame className={'mt-24'}>
       <div className="flex flex-col items-center justify-center gap-5">
         <div className="stats shadow flex flex-col md:flex-row lg:flex-row xl:flex-row">
           {[

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import TransitionFrame from "./components/UI/TransitionFrame";
+import TransitionFrame from "../components/TransitionFrame";
 
 export default function Home() {
     return (
