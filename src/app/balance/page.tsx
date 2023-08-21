@@ -5,16 +5,16 @@ import BalanceDisplay from "../components/BalanceDisplay";
 import InputForm from "../components/UI/InputForm";
 import GetBalanceHook from "../Hooks/GetBalanceHooks";
 
-interface BalancePageProps {
-  address: string;
-  stakingBalance: number;
-  nativeBalance: number;
-  tokenBalance: { balance: number; symbol: string };
-  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-};
+// interface BalancePageProps {
+//   address: string;
+//   stakingBalance: number;
+//   nativeBalance: number;
+//   tokenBalance: { balance: number; symbol: string };
+//   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+//   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+// };
 
-const BalancePage: React.FC<BalancePageProps> = () => {
+const BalancePage = () => {
   const {
     address,
     stakingBalance,
