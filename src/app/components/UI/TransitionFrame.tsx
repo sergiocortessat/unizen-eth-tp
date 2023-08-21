@@ -9,7 +9,6 @@ type TransitionFrameProps = {
 };
 
 const TransitionFrame: React.FC<TransitionFrameProps> = ({ children, customClass }) => {
-// create a function to return the custom class. If its present then add it to the string
     const getCustomClass = () => {
         if (customClass) {
             const {customMargin, delay} = customClass
