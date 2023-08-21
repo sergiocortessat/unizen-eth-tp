@@ -5,7 +5,7 @@ import BalanceDisplay from "../components/BalanceDisplay";
 import InputForm from "../components/UI/InputForm";
 import GetBalanceHook from "../Hooks/GetBalanceHooks";
 
-type BalancePageProps = {
+interface BalancePageProps {
   address: string;
   stakingBalance: number;
   nativeBalance: number;
