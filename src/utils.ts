@@ -6,7 +6,7 @@ import { format } from "date-fns";
 
 // Utility functions
 
-export function formatTo4Decimals(value: BigNumber | number): number {
+export function formatToDecimals(value: BigNumber | number): number {
   const decimals: number = 4;
   const valueNum: number = parseFloat(ethers.utils.formatEther(value));
   if (valueNum === 0) return 0;

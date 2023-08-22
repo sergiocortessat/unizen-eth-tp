@@ -1,8 +1,8 @@
 import Link from "next/link";
 import TransitionFrame from "../components/TransitionFrame";
-import Typewriter from "../components/TypeWritter";
-import { phrases } from '../phrases';
-import arrow from '../../public/arrow.svg'
+import TypeWriter from "../components/TypeWritter";
+import { phrases } from "../phrases";
+import arrow from "../../public/arrow.svg";
 import Image from "next/image";
 
 export default function Home() {
@@ -16,9 +16,7 @@ export default function Home() {
       </div>
       <div className="gap-5">
         <p className="mb-5 text-customGrey">Forget everything you know about</p>
-        <Typewriter
-          phrases={phrases}
-        />
+        <TypeWriter phrases={phrases} />
       </div>
       <TransitionFrame>
         <Link
@@ -27,7 +25,7 @@ export default function Home() {
         >
           <div className="flex flex-row items-center space-x-3 text-base font-medium">
             <span>Open Web3 OS</span>
-            <Image src={arrow} alt="Arrow" width="7" height="11"/>
+            <Image src={arrow} alt="Arrow" width="7" height="11" />
           </div>
         </Link>
       </TransitionFrame>

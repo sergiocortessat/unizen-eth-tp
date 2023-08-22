@@ -8,7 +8,7 @@ interface TypewriterProps {
   delayBetweenPhrases?: number;
 }
 
-const Typewriter = ({
+const TypeWriter = ({
   phrases,
   typeSpeed = 100,
   eraseSpeed = 50,
@@ -68,4 +68,4 @@ const Typewriter = ({
   );
 };
 
-export default Typewriter;
+export default TypeWriter;
