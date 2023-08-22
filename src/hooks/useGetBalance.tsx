@@ -38,8 +38,8 @@ export const useGetBalance = () => {
       validateAddress(address);
 
       const [stakingBal, nativeBal, tokenBal] = await Promise.all([
-        fetchNativeBalance(address),
         fetchStakingBalance(address),
+        fetchNativeBalance(address),
         fetchTokenBalance(address),
       ]);
 
