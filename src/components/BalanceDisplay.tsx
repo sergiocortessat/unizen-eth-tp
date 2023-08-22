@@ -40,7 +40,7 @@ const BalanceDisplay = ({
     );
   }
   return (
-    <TransitionFrame className={"md:mt-24 mt-10"}>
+    <TransitionFrame className={"md:mt-20 mt-10"}>
       <div className="flex flex-col items-center justify-center gap-5">
         <div className="stats shadow flex flex-col md:flex-row lg:flex-row xl:flex-row">
           {[
@@ -62,7 +62,7 @@ const BalanceDisplay = ({
               key={`${item.label}-${index}`}
             >
               <div className="stat-title">{item.label}</div>
-              <div className="stat-value">{item.value}</div>
+              <div className="stat-value"><p className="text-lg md:text-2xl">{item.value}</p></div>
             </div>
           ))}
         </div>
