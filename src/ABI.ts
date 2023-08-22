@@ -1,4 +1,4 @@
-export const ABI = [
+export const customABI = [
     {
       inputs: [
         {
@@ -187,4 +187,10 @@ export const ABI = [
       type: "function",
     },
   ];
+
+  export const genericABI = [
+    "function name() view returns (string)",
+    "function symbol() view returns (string)",
+    "function balanceOf(address) view returns (uint)",
+];
   

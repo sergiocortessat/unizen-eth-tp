@@ -1,14 +1,22 @@
 import { ethers, BigNumber, Contract } from 'ethers';
-import { getAddress } from '@ethersproject/address';
-import { AddressZero } from '@ethersproject/constants';
 import {validateAddress, getContract, formatTo4Decimals} from './utils';
+import { customABI as stakingContractABI, genericABI } from './ABI';
+import { stakingContractAddress, tokenContractAddress } from './contractTokens';
+// import dotenv from 'dotenv';
+// dotenv.config();
 
-const INFURA_ID = '60e6abd79e254092902a242c42684b94';
-const provider = new ethers.providers.JsonRpcProvider(`https://mainnet.infura.io/v3/${INFURA_ID}`);
+const INFURA_ID = process.env.INFURA_ID || '';
+
+if (!INFURA_ID) {
+    throw new Error('Please add your INFURA_ID to the .env file');
+}
+console.log(INFURA_ID);
+let provider: ethers.providers.JsonRpcProvider;
+if (INFURA_ID) {
+    provider = new ethers.providers.JsonRpcProvider(`https://mainnet.infura.io/v3/${INFURA_ID}`);
+}
 
 // Main functions
-const stakingContractAddress = '0x3019227b2b8493e45bf5d25302139c9a2713bf15';
-import { ABI as stakingContractABI } from './ABI';
 
 export const validatedAddress = (address: string): {verifiedAddress: string, urlAddress: string } => {
     validateAddress(address);
@@ -36,16 +44,10 @@ export async function fetchNativeBalance(address: string): Promise<number> {
         throw error;
     }
 }
-const tokenContractAddress = '0xae78736cd615f374d3085123a210448e74fc6393';
-const daiAbi: string[] = [
-    "function name() view returns (string)",
-    "function symbol() view returns (string)",
-    "function balanceOf(address) view returns (uint)",
-];
 
 export const fetchTokenBalance = async (address: string): Promise<{balance: number, symbol: string}> => {
     try {
-        const tokenContract: Contract = getContract(tokenContractAddress, daiAbi, provider, address);
+        const tokenContract: Contract = getContract(tokenContractAddress, genericABI, provider, address);
         const balance: BigNumber = await tokenContract.balanceOf(address);
         const symbol: string = await tokenContract.symbol();
         return { balance: formatTo4Decimals(balance), symbol };

@@ -6,7 +6,7 @@ type TransitionFrameProps = {
   className?: string;
 };
 
-const TransitionFrame: React.FC<TransitionFrameProps> = ({ children, className }) => {
+const TransitionFrame = ({ children, className }: TransitionFrameProps) => {
   return (
     <div className={twMerge("unverified-alert-2 flex items-center justify-center", className)}>
       {children}
