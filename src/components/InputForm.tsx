@@ -1,4 +1,3 @@
-import { set } from "date-fns";
 import React, { useState } from "react";
 import search from "../../public/search.svg";
 import Image from "next/image";
