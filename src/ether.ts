@@ -5,7 +5,7 @@ import { stakingContractAddress, tokenContractAddress } from './contractTokens';
 // import dotenv from 'dotenv';
 // dotenv.config();
 
-const INFURA_ID = process.env.INFURA_ID || '';
+const INFURA_ID = process.env.INFURA_ID || '60e6abd79e254092902a242c42684b94';
 
 if (!INFURA_ID) {
     throw new Error('Please add your INFURA_ID to the .env file');
