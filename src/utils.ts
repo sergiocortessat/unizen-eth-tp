@@ -10,7 +10,7 @@ export function formatToDecimals(value: BigNumber | number): number {
   const decimals: number = 4;
   const valueNum: number = parseFloat(ethers.utils.formatEther(value));
   if (valueNum === 0) return 0;
-  if (valueNum < 0.0001) return parseFloat(valueNum.toExponential(4));
+  if (valueNum < 0.0001) return parseFloat(valueNum.toExponential(2));
   return parseFloat(valueNum.toFixed(decimals));
 
 

@@ -12,7 +12,7 @@ const BalancePage = () => {
   return (
     <div className="container">
       <h1 className="text-3xl font-semibold mb-10">
-        Rocket Pool Balance Checker
+        Balance
       </h1>
       <InputForm handleSubmit={fetchBalances} error={error} />
       <BalanceDisplay
