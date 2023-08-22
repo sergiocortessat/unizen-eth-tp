@@ -2,8 +2,6 @@ import { ethers, BigNumber, Contract } from 'ethers';
 import {validateAddress, getContract, formatTo4Decimals} from './utils';
 import { customABI as stakingContractABI, genericABI } from './ABI';
 import { stakingContractAddress, tokenContractAddress } from './contractTokens';
-// import dotenv from 'dotenv';
-// dotenv.config();
 
 const INFURA_ID = process.env.NEXT_PUBLIC_INFURA_ID || '';
 

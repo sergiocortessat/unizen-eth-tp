@@ -4,7 +4,6 @@ type InputFormProps = {
   handleSubmit: (address: string) => void;
   error: string;
 };
-// react hook form.
 const InputForm = ({ handleSubmit, error }: InputFormProps) => {
   const [address, setAddress] = useState("")
   return (

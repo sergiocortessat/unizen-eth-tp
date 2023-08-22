@@ -19,6 +19,7 @@ module.exports = {
       colors: {
         'emerald': 'rgb(0, 245, 164)',
         'darkEmerald': 'rgb(0, 245, 164, 0.8)',
+        'customGrey': "#d3d3d3",
       },
       fontFamily: {
         'space': ['Space Grotesk', 'sans-serif']

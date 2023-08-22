@@ -2,7 +2,7 @@ import { formatTo4Decimals, isAddress, validateAddress, getContract, getCurrentD
 import { ethers } from 'ethers';
 import { AddressZero } from '@ethersproject/constants';
 import "@testing-library/jest-dom";
-import {ABI} from '../ABI'
+import {customABI as ABI} from '../ABI'
 
 jest.mock('ethers', () => ({
     Contract: jest.fn(),
