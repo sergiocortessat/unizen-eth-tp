@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-    <body className={`${inter.className} container mx-auto p-4 text-center font-space min-h-screen flex justify-start items-start flex-col`}>
+    <body className={`${inter.className} container mx-auto p-4 text-center font-space min-h-screen flex justify-start items-center flex-col`}>
       <NavBar />
       <Suspense fallback={<Loader />} />
       {children}
