@@ -28,20 +28,6 @@ export function validateAddress(address: string): boolean {
   }
 }
 
-// export function isAddress1(value: string) {
-//   try {
-//       return getAddress(value);
-//   } catch {
-//       return false;
-//   }
-// }
-
-// export function validateAddress2(address: string) {
-//   if (!isAddress(address) || address === AddressZero) {
-//       throw new Error(`Invalid 'address' parameter '${address}'.`);
-//   }
-// }
-
 function getSigner(provider: JsonRpcProvider, account: string) {
   return provider.getSigner(account).connectUnchecked();
 }
@@ -54,22 +40,6 @@ export function getContract(address: string, ABI: ContractInterface, provider: J
   validateAddress(address);
   return new Contract(address, ABI, getProviderOrSigner(provider, account));
 }
-// Use library for this date.fns or date.js
-// export function getCurrentDateFormatted(): string {
-//   const months = [
-//       'January', 'February', 'March', 'April', 'May', 'June', 
-//       'July', 'August', 'September', 'October', 'November', 'December'
-//   ];
-  
-//   const date = new Date();
-//   const month = months[date.getMonth()];
-//   const day = date.getDate();
-//   const year = date.getFullYear();
-//   const hours = String(date.getHours()).padStart(2, '0');
-//   const minutes = String(date.getMinutes()).padStart(2, '0');
-  
-//   return `${month}/${day}/${year} at ${hours}:${minutes}`;
-// }
 
 export function getCurrentDateFormatted(): string {
   const date = new Date();

@@ -20,7 +20,6 @@ export const useGetBalance = () => {
     tokenBalance: { balance: 0, symbol: "" },
   });
 
-  // move or chewck the set error
   //   const fetchBalances = async (address: string) => {
   //     if (!address) {
   //       setError("Address not provided");
