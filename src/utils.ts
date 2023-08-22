@@ -2,6 +2,7 @@ import { ethers, BigNumber, Contract, ContractInterface } from 'ethers';
 import { getAddress } from '@ethersproject/address';
 import { AddressZero } from '@ethersproject/constants';
 import { JsonRpcProvider } from '@ethersproject/providers';
+import { format } from "date-fns";
 
 // Utility functions
 
@@ -15,16 +16,15 @@ export function formatTo4Decimals(value: BigNumber | number): number {
 
 }
 
-export function validateAddress(value: string): boolean {
+export function validateAddress(address: string): boolean {
   try {
-    const address = getAddress(value);
-    if (address === AddressZero) {
+    const walletAddress = getAddress(address);
+    if (walletAddress === AddressZero) {
       throw new Error();
     }
     return true;
   } catch {
-    // return false;
-    throw new Error(`Invalid 'address' parameter '${value}'.`);
+    throw new Error(`Invalid 'address' parameter '${address}'.`);
   }
 }
 
@@ -55,18 +55,23 @@ export function getContract(address: string, ABI: ContractInterface, provider: J
   return new Contract(address, ABI, getProviderOrSigner(provider, account));
 }
 // Use library for this date.fns or date.js
+// export function getCurrentDateFormatted(): string {
+//   const months = [
+//       'January', 'February', 'March', 'April', 'May', 'June', 
+//       'July', 'August', 'September', 'October', 'November', 'December'
+//   ];
+  
+//   const date = new Date();
+//   const month = months[date.getMonth()];
+//   const day = date.getDate();
+//   const year = date.getFullYear();
+//   const hours = String(date.getHours()).padStart(2, '0');
+//   const minutes = String(date.getMinutes()).padStart(2, '0');
+  
+//   return `${month}/${day}/${year} at ${hours}:${minutes}`;
+// }
+
 export function getCurrentDateFormatted(): string {
-  const months = [
-      'January', 'February', 'March', 'April', 'May', 'June', 
-      'July', 'August', 'September', 'October', 'November', 'December'
-  ];
-  
   const date = new Date();
-  const month = months[date.getMonth()];
-  const day = date.getDate();
-  const year = date.getFullYear();
-  const hours = String(date.getHours()).padStart(2, '0');
-  const minutes = String(date.getMinutes()).padStart(2, '0');
-  
-  return `${month}/${day}/${year} at ${hours}:${minutes}`;
+  return format(date, "MMMM/d/yyyy 'at' HH:mm");
 }

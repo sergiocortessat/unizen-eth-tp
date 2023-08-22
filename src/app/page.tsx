@@ -1,7 +1,9 @@
 import Link from "next/link";
 import TransitionFrame from "../components/TransitionFrame";
 import Typewriter from "../components/TypeWritter";
-import { phrases } from '../phrases'
+import { phrases } from '../phrases';
+import arrow from '../../public/arrow.svg'
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -25,18 +27,7 @@ export default function Home() {
         >
           <div className="flex flex-row items-center space-x-3 text-base font-medium">
             <span>Open Web3 OS</span>
-            <svg
-              width="7"
-              height="11"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="m1 10 4.5-4.5L1 1"
-                stroke="currentColor"
-                strokeWidth="1.3"
-              ></path>
-            </svg>
+            <Image src={arrow} alt="Arrow" width="7" height="11"/>
           </div>
         </Link>
       </TransitionFrame>

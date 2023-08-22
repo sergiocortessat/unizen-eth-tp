@@ -3,7 +3,8 @@ import {validateAddress, getContract, formatTo4Decimals} from './utils';
 import { customABI as stakingContractABI, genericABI } from './ABI';
 import { stakingContractAddress, tokenContractAddress } from './contractTokens';
 
-const INFURA_ID = process.env.NEXT_PUBLIC_INFURA_ID || '';
+// Please add your INFURA_ID to an .env file and call NEXT_PUBLIC_INFURA_ID
+const INFURA_ID = process.env.NEXT_PUBLIC_INFURA_ID || ''; //<-- You can add your INFURA_ID manually here
 
 if (!INFURA_ID) {
     throw new Error('Please add your INFURA_ID to the .env file');

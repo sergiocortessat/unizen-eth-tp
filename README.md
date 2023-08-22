@@ -1,34 +1,94 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Weather App
+
+## Table of Contents
+  <br />
+
+* [About the Project](#about-the-project)
+* [Built With](#built-with)
+* [Contributing](#contributing)
+* [Contact](#authors)
+* [Acknowledgements](#acknowledgements) 
+* [Getting Started](#getting-started) 
+* [Live Demo and Video](#live-version) 
+
+#
+<br />
+
+![React](https://img.shields.io/badge/React-3776AB?style=for-the-badge&logo=react&logoColor=white) <br/>
+![Typescript](https://img.shields.io/badge/TypeScript-092E20?style=for-the-badge&logo=typescript&logoColor=white) <br/>
+![NextJS](https://img.shields.io/badge/NextJS-092E20?style=for-the-badge&logo=nextjs&logoColor=white) <br/>
+![Tailwind](https://img.shields.io/badge/Tailwind-092E20?style=for-the-badge&logo=tailwind&logoColor=white) <br/>
+![EtherJS](https://img.shields.io/badge/EtherJS-092E20?style=for-the-badge&logo=etherjs&logoColor=white) <br/>
+
+
+
+<br />
+
+### Built With
+
+* [NEXT] [TYPESCRIPT] [WEBPACK] [JAVASCRIPT] [TAILWIND] [ETHERJS]
+
+## Live Version
+
+* [Live Demo](https://unizen-eth-tp.vercel.app/) 
+
+<!-- ABOUT THE PROJECT   -->
+## About The Project
+The unizen demo app allows you to fetch native balances, stock balances and token balances from the Ethereum blockchain. The app is built with NextJS, Typescript, TailwindCSS, and EtherJS.
+
+## Screenshot Test
+
+<p align="center">
+  <img height="auto" src="Screenshot.png">
+</p>
+
+
+
+## Contributing
+
+Contributions make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+## Prerequisites
+
+Terminal or similar to execute the program.
+
 
 ## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Clone project
+
+- To get a local copy up and running follow these simple example steps.
+- Clone this repository with git clone ```https://github.com/sergiocortessat/SLICE-COMPONENTS-REACT---VITE---TYPESCRIPT``` using your terminal or command line.
+- Change to the project directory by entering: ```cd SLICE-COMPONENTS-REACT---VITE---TYPESCRIPT``` in the terminal.
+- Enter the project folder and set the repo with its correspondent using npm install.
+- After this run the command npx run start
+- If the project cant be build, please run npx webpack.
+
+## Command line steps
+```
+- $ git clone `$ git clone https://github.com/sergiocortessat/SLICE-COMPONENTS-REACT---VITE---TYPESCRIPT
+- $ git checkout develop
+- $ cd scs-weather-app
+- $npm i
+- $ npm start
+- ##(If project doesn't build, please run): $ npx webpack
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Authors
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+👤 Sergio Cortes Satizabal
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Github: [@sergiocortessat](https://github.com/sergiocortessat)
+- Twitter: [@sergiocortessat](https://twitter.com/sergiocortessat)
+- LinkedIn: [@sergiocortessat](https://www.linkedin.com/in/sergio-cortes-satizabal-3b452194/)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 📝 License
 
-## Deploy on Vercel
+This project is [MIT](https://github.com/sergiocortessat/sergiocortessat/blob/main/LICENSE) licensed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

@@ -18,12 +18,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-     <body className={`${inter.className} container h-screen mx-auto p-4 text-center font-space`}>
-          <NavBar />
-          <Suspense fallback={<Loader />} />
-          {children}
-        </body>
-    </html>
+    <html lang="en" className="h-full">
+    <body className={`${inter.className} container mx-auto p-4 text-center font-space min-h-screen`}>
+      <NavBar />
+      <Suspense fallback={<Loader />} />
+      {children}
+    </body>
+  </html>
   )
 }
