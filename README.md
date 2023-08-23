@@ -1,4 +1,4 @@
-# Weather App
+# ETH Balance Checker
 
 ## Table of Contents
   <br />
