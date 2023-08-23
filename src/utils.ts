@@ -1,19 +1,24 @@
-import { ethers, BigNumber, Contract, ContractInterface } from 'ethers';
-import { getAddress } from '@ethersproject/address';
-import { AddressZero } from '@ethersproject/constants';
-import { JsonRpcProvider } from '@ethersproject/providers';
+import { ethers, BigNumber, Contract, ContractInterface } from "ethers";
+import { getAddress } from "@ethersproject/address";
+import { AddressZero } from "@ethersproject/constants";
+import { JsonRpcProvider } from "@ethersproject/providers";
 import { format } from "date-fns";
 
 // Utility functions
 
-export function formatToDecimals(value: BigNumber | number): number {
+export function formatToDecimals(value: BigNumber | number): any {
   const decimals: number = 4;
   const valueNum: number = parseFloat(ethers.utils.formatEther(value));
   if (valueNum === 0) return 0;
-  if (valueNum < 0.0001) return parseFloat(valueNum.toExponential(2));
-  return parseFloat(valueNum.toFixed(decimals));
-
-
+  if (valueNum < 0.0001 || valueNum >= 100000000)
+    return parseFloat(valueNum.toExponential(2)).toLocaleString("en-US", {
+      minimumFractionDigits: 4,
+      maximumFractionDigits: 4,
+    });
+  return parseFloat(valueNum.toFixed(decimals)).toLocaleString("en-US", {
+    minimumFractionDigits: 4,
+    maximumFractionDigits: 4,
+  });
 }
 
 export function validateAddress(address: string): boolean {
@@ -36,7 +41,12 @@ function getProviderOrSigner(provider: JsonRpcProvider, account?: string) {
   return account ? getSigner(provider, account) : provider;
 }
 
-export function getContract(address: string, ABI: ContractInterface, provider: JsonRpcProvider, account?: string) {
+export function getContract(
+  address: string,
+  ABI: ContractInterface,
+  provider: JsonRpcProvider,
+  account?: string
+) {
   validateAddress(address);
   return new Contract(address, ABI, getProviderOrSigner(provider, account));
 }
