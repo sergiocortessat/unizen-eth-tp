@@ -62,7 +62,7 @@ const BalanceDisplay = ({
               key={`${item.label}-${index}`}
             >
               <div className="stat-title">{item.label}</div>
-              <div className="stat-value"><p className="text-lg md:text-2xl">{item.value}</p></div>
+              <div className="stat-value"><p className="text-2xl md:text-2xl">{item.value}</p></div>
             </div>
           ))}
         </div>
