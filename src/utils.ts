@@ -31,7 +31,7 @@ export function validateAddress(address: string): boolean {
 }
 
 function getSigner(provider: JsonRpcProvider, account: string) {
-  return provider.getSigner(account).connectUnchecked();
+  return provider.getSigner(account);
 }
 
 function getProviderOrSigner(provider: JsonRpcProvider, account?: string) {
