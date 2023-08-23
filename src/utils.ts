@@ -11,10 +11,7 @@ export function formatToDecimals(value: BigNumber | number): any {
   const valueNum: number = parseFloat(ethers.utils.formatEther(value));
   if (valueNum === 0) return 0;
   if (valueNum < 0.0001 || valueNum >= 100000000)
-    return parseFloat(valueNum.toExponential(2)).toLocaleString("en-US", {
-      minimumFractionDigits: 4,
-      maximumFractionDigits: 4,
-    });
+    return parseFloat(valueNum.toExponential(2))
   return parseFloat(valueNum.toFixed(decimals)).toLocaleString("en-US", {
     minimumFractionDigits: 4,
     maximumFractionDigits: 4,
@@ -55,3 +52,4 @@ export function getCurrentDateFormatted(): string {
   const date = new Date();
   return format(date, "MMMM/d/yyyy 'at' HH:mm");
 }
+
